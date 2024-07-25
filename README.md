@@ -1,5 +1,5 @@
 ## Giới thiệu
-NhaDuX Flower Store là ứng dụng bán hoa tươi sử dụng Flutter và Dart cho giao diện và chức năng, cùng với Angola cho trang Admin trên nền web. Database sử dụng là MongoDB và API được viết bằng Node.js với Swagger UI để quản lý API.
+Đây là ứng dụng bán hoa tươi sử dụng Flutter và Dart cho giao diện và chức năng, cùng với Angola cho trang Admin trên nền web. Database sử dụng là MongoDB và API được viết bằng Node.js với Swagger UI để quản lý API.
 
 ## Tính năng
 
