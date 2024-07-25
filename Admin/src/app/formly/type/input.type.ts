@@ -1,0 +1,29 @@
+import { Component } from "@angular/core";
+import { FieldType } from "@ngx-formly/core";
+import { INPUT_TEXT_TYPE } from "../../enums/input-text.type";
+
+@Component({
+    selector: 'formly-field-input',
+    template: `
+      <input-text
+        [formControl]="$any(formControl)"
+        [formlyAttributes]="field"
+        [required]="to['required'] || false"
+        [label]="props.label"
+        [tabindex]="to.tabindex"
+        [type]="type"
+        [updateOnBlur]="to['updateOnBlur']"
+        [readonly]="props.readonly || false"
+        [placeholder]="to.placeholder || ''"
+        [keyFilter]="props['keyFilter']"
+        [showIcon]="props['showIcon']"
+        [suffix]="props['suffix']"
+        [prefix]="props['prefix']">
+      </input-text>
+    `,
+})
+export class FormlyFieldInput extends FieldType {
+    get type(): INPUT_TEXT_TYPE {
+        return this.props.type as INPUT_TEXT_TYPE || INPUT_TEXT_TYPE.TEXT;
+    }
+}

@@ -1,0 +1,19 @@
+.category-list {
+    padding: 14px;
+}
+
+.dropdown-action {
+    position: absolute;
+    z-index: 999;
+}
+
+.category-list-item:hover {
+    a {
+        color: white !important;
+    }
+    background-color: #121212;
+}
+
+.list-group-item:hover {
+    // opacity: 0.6;
+}

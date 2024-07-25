@@ -1,0 +1,993 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Flower Store API",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/signup-update": {
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add new user.",
+            "schema": {
+              "$ref": "#/definitions/Accounts"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sign up success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Login.",
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login success",
+            "schema": {
+              "$ref": "#/definitions/Accounts"
+            }
+          },
+          "500": {
+            "description": "Login failt",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/add-category": {
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add new category.",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Add success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-list-category": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Get category list success",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          },
+          "500": {
+            "description": "Get category list failed",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-category-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get category by id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get category success",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          },
+          "404": {
+            "description": "Category not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Get category failed",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/find-category": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Find category",
+            "schema": {
+              "$ref": "#/definitions/FindCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Find success",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          },
+          "500": {
+            "description": "Find failt",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-category/{id}": {
+      "put": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Update category by id"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update category data",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update success",
+            "schema": {
+              "$ref": "#/definitions/UpdateCategory"
+            }
+          },
+          "500": {
+            "description": "Update failed",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-category/{id}": {
+      "delete": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Delete category by id"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update category data",
+            "schema": {
+              "$ref": "#/definitions/DeleteCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Delete failed",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/find-invoice": {
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Find invoice",
+            "schema": {
+              "$ref": "#/definitions/FindInvoice"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Find success ",
+            "schema": {
+              "$ref": "#/definitions/Invoices"
+            }
+          },
+          "500": {
+            "description": "Find Fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addnew-invoice": {
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add new Invoice.",
+            "schema": {
+              "$ref": "#/definitions/Invoices"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New Invoices Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-invoice/{id}": {
+      "put": {
+        "tags": [
+          "Invoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update Invoice.",
+            "schema": {
+              "$ref": "#/definitions/Invoices"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update Invoices Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-invoice/{id}": {
+      "delete": {
+        "tags": [
+          "Invoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Delete Invoice by ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete Invoices Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getbyid-invoice/{id}": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get Invoice by ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Invoice Success",
+            "schema": {
+              "$ref": "#/definitions/Invoices"
+            }
+          }
+        }
+      }
+    },
+    "/getall-invoice": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Get All Invoices Success",
+            "schema": {
+              "$ref": "#/definitions/Invoices"
+            }
+          }
+        }
+      }
+    },
+    "/addnew-detailInvoice": {
+      "post": {
+        "tags": [
+          "DetailInvoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add new DetailInvoice.",
+            "schema": {
+              "$ref": "#/definitions/DetailInvoices"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New DetailInvoices Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-detailInvoice/{id}": {
+      "put": {
+        "tags": [
+          "DetailInvoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update DetailInvoice.",
+            "schema": {
+              "$ref": "#/definitions/DetailInvoices"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update DetailInvoices Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-detailInvoice/{id}": {
+      "delete": {
+        "tags": [
+          "DetailInvoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Delete DetailInvoice by ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete DetailInvoices Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getbyid-detailInvoice/{id}": {
+      "get": {
+        "tags": [
+          "DetailInvoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get DetailInvoice by ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get DetailInvoice Success",
+            "schema": {
+              "$ref": "#/definitions/DetailInvoices"
+            }
+          }
+        }
+      }
+    },
+    "/getall-detailInvoice": {
+      "get": {
+        "tags": [
+          "DetailInvoice"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Get All DetailInvoices Success",
+            "schema": {
+              "$ref": "#/definitions/DetailInvoices"
+            }
+          }
+        }
+      }
+    },
+    "/find-product": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Find product",
+            "schema": {
+              "$ref": "#/definitions/FindProduct"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Find success ",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          },
+          "500": {
+            "description": "Find Fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-product": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add new Product.",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New Products Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-product/{id}": {
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update Product.",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update Products Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-product/{id}": {
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Delete Product by ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete Products Success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getbyid-product/{id}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get Product by ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Product Success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        }
+      }
+    },
+    "/getall-product": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "path",
+            "description": "Get Product by list of IDs.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get All Products Success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Accounts": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "string"
+        },
+        "email": {
+          "type": "string",
+          "example": "string"
+        },
+        "phone": {
+          "type": "string",
+          "example": "string"
+        },
+        "password": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "phone",
+        "password"
+      ]
+    },
+    "Login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "string"
+        },
+        "password": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "Products": {
+      "type": "object",
+      "properties": {
+        "nameProduct": {
+          "type": "string",
+          "example": "string"
+        },
+        "price": {
+          "type": "string",
+          "example": "number"
+        },
+        "img": {
+          "type": "string",
+          "example": "string"
+        },
+        "quantity": {
+          "type": "string",
+          "example": "number"
+        },
+        "descrip": {
+          "type": "string",
+          "example": "string"
+        },
+        "inclueId": {
+          "type": "string",
+          "example": "string"
+        },
+        "fav": {
+          "type": "string",
+          "example": "boolean"
+        },
+        "cateid": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "required": [
+        "nameProduct",
+        "price",
+        "img",
+        "quantity",
+        "descrip",
+        "inclueId",
+        "fav",
+        "cateid"
+      ]
+    },
+    "FindProduct": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "string"
+        },
+        "nameProduct": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "Categories": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "FindCategory": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "DeleteCategory": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "UpdateCategory": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "string"
+        },
+        "idProduct": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "Invoice": {},
+    "FindInvoice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "string"
+        },
+        "acountId": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "DetailInvoice": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "string",
+          "example": "string"
+        },
+        "quantity": {
+          "type": "string",
+          "example": "number"
+        },
+        "price": {
+          "type": "string",
+          "example": "number"
+        },
+        "address": {
+          "type": "string",
+          "example": "string"
+        },
+        "date": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "required": [
+        "productId",
+        "quantity",
+        "price",
+        "address",
+        "date"
+      ]
+    }
+  }
+}

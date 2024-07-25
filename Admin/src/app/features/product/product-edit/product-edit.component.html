@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left" id="my-modal-title">{{title}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="close()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form">
+      <formly-form [model]="product" [fields]="fields" [options]="options" [form]="form"></formly-form>
+    </form>
+    
+    <div class="pt-2 text-center">
+        <p-image [src]="product.img" alt="" width="300" class=""/>
+    </div>
+    <div class="submit-section text-center pt-2">
+        <button class="btn btn-primary submit-btn"[disabled]="form.invalid" (click)="submit()">Submit</button>
+    </div>
+
+</div>

@@ -1,0 +1,69 @@
+<div class="content container-fluid">
+    <p-table
+    *ngIf="invoices && invoices.length"
+        #dt
+        [value]="invoices || []"
+        dataKey="_id"
+    >
+        <ng-template pTemplate="caption">
+            <div class="justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="page-title">Danh sách hóa đơn</h3>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 2rem"></th>
+                <th>Mã HĐ</th>
+                <th>Ngày đặt</th>
+                <th>Khách Hàng</th>
+                <th>Tổng Giá Trị</th>
+                <th>Địa Chỉ</th>
+                <!-- <th></th> -->
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-invoice let-expanded="expanded">
+            <tr>
+                <td style="width: 2rem">
+                    <p-button type="button" pRipple [pRowToggler]="invoice" [text]="true" [rounded]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" />
+                </td>
+                <td>{{ invoice.nameInvoice }}</td>
+                <td>{{ invoice.dateDisplay }}</td>
+                <td>{{ invoice.account ? invoice.account.name : 'Nhat Anh'   }}</td>
+                <td>{{ invoice.totalPrice }}</td>
+                <td>{{ invoice.addressDisplay }}</td>
+                <!-- <td style="text-align: center;">
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded btn-primary" style="margin-right: 5px;" (click)="detail(invoice._id)"></button>
+                </td> -->
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-invoice>
+            <tr *ngIf="invoice.details && invoice.details.length">
+                <td colspan="6">
+                    <p-table [value]="invoice.details || []" dataKey="_id">
+                        <ng-template pTemplate="caption">
+                            <p>Chi tiết hoá đơn</p>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width: 2rem"></th>
+                                <th>Tên SP</th>
+                                <th>Số Lượng</th>
+                                <th>Giá</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-detail>
+                            <tr>
+                                <td style="width: 2rem"></td>
+                                <td>{{ detail.product.nameProduct }}</td>
+                                <td>{{ detail.quantity }}</td>
+                                <td>{{ detail.price }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

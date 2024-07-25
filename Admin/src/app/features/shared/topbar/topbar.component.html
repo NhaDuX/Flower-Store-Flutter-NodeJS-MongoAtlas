@@ -1,0 +1,57 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo">
+        <!-- <img src="assets/layout/images/{{layoutService.config().colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo"> -->
+        <span>4 MAN FLOWER</span>
+    </a>
+
+    <button class="p-link layout-menu-button layout-topbar-button" (click)="visibleSidebar = !visibleSidebar">
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <button class="p-link layout-topbar-menu-button layout-topbar-button">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <div class="layout-topbar-menu">
+        <button class="p-link layout-topbar-button">
+            <i class="pi pi-cog"></i>
+            <span>Settings</span>
+        </button>
+    </div>
+</div>
+
+<div class="sidebar flex justify-content-center">
+    <p-sidebar [(visible)]="visibleSidebar">
+        <ul class="list-group sidebar-menu">
+            <li *ngFor="let item of items; index as iParent" class="menu-item list-group-item">
+                <ng-container *ngIf="item.routerLink; else elseBlock">
+                    <a class="menu-item list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                        (click)="toggle(iParent)" [routerLink]="item.routerLink"> 
+                        {{ item.label }} <i *ngIf="item.items && item.items.length" [ngClass]="expanded[iParent] ? 'pi pi-caret-down' : 'pi pi-caret-right'"></i>
+                    </a>
+                </ng-container>
+                <ng-template #elseBlock>
+                    <a class="menu-item list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                        (click)="toggle(iParent)"> 
+                        {{ item.label }} <i *ngIf="item.items && item.items.length" [ngClass]="expanded[iParent] ? 'pi pi-caret-down' : 'pi pi-caret-right'"></i>
+                    </a>
+                </ng-template>
+
+                <ul *ngIf="item.items && item.items?.length && item.expanded" class="list-group child-item">
+                    <li *ngFor="let i of item.items" class="list-group-item menu-item">
+                        <ng-container *ngIf="i.routerLink; else elseBlockChild">
+                            <a class="menu-item list-group-item list-group-item-action" [routerLink]="i.routerLink"> 
+                                <i class=""></i> {{ i.label }} 
+                            </a>
+                        </ng-container>
+                        <ng-template #elseBlockChild>
+                            <a class="menu-item list-group-item list-group-item-action"> 
+                                <i class=""></i> {{ i.label }} 
+                            </a>
+                        </ng-template>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </p-sidebar>
+</div>

@@ -1,0 +1,38 @@
+<div class="content container-fluid">
+    <p-table *ngIf="accounts && accounts.length" #dt [value]="accounts || []">
+        <ng-template pTemplate="caption">
+            <div class="justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="page-title">Tài Khoản Khách Hàng</h3>
+                    <div>
+                        <button pButton pRipple label="Thêm Tài Khoản" icon="pi pi-plus" class="btn-primary"
+                            (click)="editAccount()"></button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 2rem"></th>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-account let-expanded="expanded">
+            <tr>
+                <th style="width: 2rem"></th>
+                <td>{{ account.name }}</td>
+                <td>{{ account.email }}</td>
+                <td>{{ account.phone }}</td>
+                <td style="text-align: center;">
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded btn-primary"
+                        style="margin-right: 5px;" (click)="editAccount(account._id)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-secondary"
+                        (click)="deleteAcc(account._id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

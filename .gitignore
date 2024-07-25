@@ -1,0 +1,15 @@
+
+/Api/node_modules
+Api/package-lock.json
+App/flower_store/pubspec.lock
+App/flower_store/windows
+App/flower_store/linux
+App/flower_store/macos
+/App/flower_store/macos
+App/flower_store/pubspec.lock
+.DS_Store
+Api/.DS_Store
+App/.DS_Store
+/Admin/.angular
+/Admin/node_modules
+Admin/package-lock.json

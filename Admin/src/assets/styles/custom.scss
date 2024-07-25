@@ -1,0 +1,233 @@
+
+/* General */
+.text-global {
+    color: #FF7849 !important;
+}
+
+.bg-global {
+    background-color: #121212;
+}
+
+.p-tooltip-text {
+    font-size: 15px;
+}
+
+.page-title {
+    font-weight: 600;
+}
+
+.bg-light-gray {
+    background-color: #f8f9fa;
+}
+
+.p-inputtext {
+    height: 50.35px !important;
+}
+
+.p-datatable-loading-overlay {
+    opacity: 0.35;
+}
+
+.title {
+    color: #333333;
+    float: left;
+    font-weight: 700;
+    margin-right: 30px;
+    width: 30%;
+}
+
+.text {
+    color: #888888;
+    display: block;
+    overflow: hidden;
+}
+
+.min-w-100 {
+    min-width: 100%;
+}
+
+.header .has-arrow .dropdown-toggle:after {
+    border-bottom: 2px solid #fff !important;
+    border-right: 2px solid #fff !important;
+}
+
+.page-header-custom {
+    margin: 5.5rem 1rem !important;
+}
+
+.fa-check {
+    color: greenyellow;
+}
+
+.fa-times {
+    color: #fc6075;
+}
+
+/* Form */
+.p-input-icon-left, .p-input-icon-right {
+    position: relative;
+    display: block;
+}
+/* Header */
+.header {
+    background: linear-gradient(to right, #ff9b44 0%, #fc6075 100%);
+}
+
+@media only screen and (min-width: 991px) {
+    .mini-sidebar .header-left .logo img {
+        height: auto;
+        max-height: 50px;
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+/* Modal */
+.form-label > span {
+    color: red !important;
+}
+
+/* Side bar */
+.sidebar {
+	color: #fff;
+    background: #1f1f1f;
+    
+    .subdrop {
+        background: #1f1f1f;
+    }
+}
+
+.sidebar-menu li a {
+    text-transform: none;
+}
+
+.sidebar-menu > ul > li.submenu ul li a {
+	color: #fff;
+	background: #1f1f1f;
+	display: flex;
+}
+
+.sidebar-menu > ul > li.submenu ul li:hover a {
+	color: #FF7849;
+	background: #1f1f1f;
+    cursor: pointer;
+}
+
+.file-wrap .file-scroll {
+    overflow: hidden;
+}
+
+.file-wrap .file-sidebar {
+    height: 100%;
+}
+
+.file-wrap .file-scroll {
+    max-height: 50rem;
+
+}
+
+.file-wrap .file-content,
+.file-body .file-content-inner {
+    padding-bottom: 0px !important;
+}
+
+/* PrimeNG Table */
+.p-datatable-thead th {
+    padding: .5rem 1rem !important;
+}
+
+.confirmDialog {
+    width: 40vw;
+    z-index: 9999 !important;
+}
+
+/* PrimeNG DateTime Picker */
+.p-datepicker .p-datepicker-buttonbar, 
+.p-datepicker .p-datepicker-header {
+    padding: 0;
+}
+
+/* PrimeNG Button */
+.p-button {
+    border-radius: 6px;
+}
+
+.p-button.p-button-icon-only {
+    width: 2rem;
+}
+
+.p-button.p-button-icon-only.p-button-rounded {
+    height: 2rem;
+}
+
+/* Book Management */
+.file-body-inner {
+    overflow: auto !important;
+    height: 480px !important;
+}
+
+.book-management.file-wrap {
+    border: none;
+}
+.file-wrap .file-cont-wrap {
+    margin-left: 0px;
+}
+
+.rsp-Image {
+    max-width: 100%;
+    height: 200px;
+}
+
+/* Books Modal */
+.form-child-title {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 22.3px;
+}
+
+/* Profile */
+.profile {
+    background-color: #ffffff;
+}
+
+.column-border-right {
+    border-right: 1px solid #000;
+    border-right-style: dashed; 
+  }
+  .vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+/* New Role  */
+.new-role-tooptip.p-tooltip {
+    max-width: fit-content;
+    .p-tooltip-text {
+        height: auto;
+        background: #fff;
+    }
+}
+
+/* Cart */
+.cart-title {
+    color: #333333;
+    font-weight: 700;
+    margin-right: 30px;
+}
+
+.cart-rsp-Image {
+    max-width: 100%; 
+    height: 50px;
+    object-fit: contain;
+}
+
+.rsp-Image.request {
+    max-width: 100%; 
+    height: 100px;
+    object-fit: contain;
+
+}
+
+.card-file-thumb {
+    min-height: 200px;
+}

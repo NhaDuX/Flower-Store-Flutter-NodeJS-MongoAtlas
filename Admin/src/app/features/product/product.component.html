@@ -1,0 +1,128 @@
+
+<div class="content container-fluid">
+    <div class="row px-2">
+        <div class="col-3 list-group card">
+            <div class="d-flex justify-content-between">
+                <h3 class="page-title">Thể loại</h3>
+                <button pButton icon="pi pi-plus" class="p-button-rounded btn-primary"
+                    (click)="op.toggle($event)"></button>
+            </div>
+            <ul class="list-group">
+                <li [class]="cate._id && cate._id === selectedCate?._id ? 'bg-global' : ''"
+                    class="list-group-item menu-item category-list-item"
+                    *ngFor="let cate of categories"
+                    (click)="cateChange(cate)">
+                    <div class="d-flex justify-content-between">
+                        <a [class]="cate._id === selectedCate?._id ? 'text-light font-weight-bold' : 'text-black'"
+                            class=" menu-item"
+                            href="javascript:void(0);">
+                            {{cate.name}}
+                        </a>
+                        <button 
+                            *ngIf="cate._id !== 'all'"
+                            pButton 
+                            pRipple 
+                            icon="pi pi-trash" 
+                            class="p-button-rounded p-button-secondary" 
+                            style="margin-right: 5px;" 
+                            (click)="deleteCate(cate._id)"
+                        ></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-9">
+            <p-table
+                #dt
+                [value]="products || []"
+                dataKey="_id"
+            >
+                <ng-template pTemplate="caption">
+                    <div class="justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="page-title">Danh sách sản phẩm</h3>
+                            <div>
+                                <button pButton pRipple label="Thêm Sản Phẩm" icon="pi pi-plus" class="btn-primary"
+                                    (click)="editProduct()"></button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 2rem"></th>
+                        <th>Tên SP</th>
+                        <th>Mô Tả</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product let-expanded="expanded">
+                    <tr>
+                        <td style="width: 2rem">
+                            <p-button type="button" pRipple [pRowToggler]="product" [text]="true" [rounded]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" />
+                        </td>
+                        <td>{{ product.nameProduct }}</td>
+                        <td class="col-4 table-ellipsis-col">
+                            <a href="javascript:0" class="ellipsis-cell">{{ product.descrip }}</a>
+                        </td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td style="text-align: center;">
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded btn-primary" style="margin-right: 5px;" (click)="editProduct(product._id)"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-secondary" (click)="deletePro(product._id)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="rowexpansion" let-product>
+                    <tr *ngIf="product.inclueId && product.inclueId.length">
+                        <td colspan="6">
+                            <p-table [value]="product.inclueId || []" dataKey="_id">
+                                <ng-template pTemplate="caption">
+                                    <p>Sản phẩm đi kèm</p>
+                                </ng-template>
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th style="width: 2rem"></th>
+                                        <th>Tên SP</th>
+                                        <th>Mô Tả</th>
+                                        <th>Giá</th>
+                                        <th>Số Lượng</th>
+                                        <th></th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-inclueid>
+                                    <tr>
+                                        <td style="width: 2rem"></td>
+                                        <td>{{ inclueid.nameProduct }}</td>
+                                        <td class="col-4 table-ellipsis-col">
+                                            <a href="javascript:0" class="ellipsis-cell">{{ inclueid.descrip }}</a>
+                                        </td>
+                                        <td>{{ inclueid.price }}</td>
+                                        <td>{{ inclueid.quantity }}</td>
+                                        <td style="text-align: center;">
+                                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded btn-primary" style="margin-right: 5px;" (click)="editProduct(inclueid._id)"></button>
+                                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-secondary" (click)="deletePro(inclueid._id)"></button>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+
+<p-overlayPanel #op>
+    <p class="form-label">Thêm loại mới</p>
+    <div class="d-flex align-items-center">
+        <input-text [(ngModel)]="newCate"></input-text>
+        <button pButton icon="pi pi-check" class="p-button-rounded btn-primary"
+            style="margin-left: 1rem;"
+            (click)="newCategory()"></button>
+    </div>
+</p-overlayPanel>
