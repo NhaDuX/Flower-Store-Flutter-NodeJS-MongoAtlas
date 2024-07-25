@@ -55,8 +55,6 @@ flutter run
 ## Lưu ý
 Đảm bảo rằng mọi phần mềm cần thiết đã được cài đặt trên máy tính của bạn, bao gồm Flutter, Angular CLI, Node.js, và MongoDB.
 
-## Bảo trì
-Thông tin chi tiết về cách bảo trì và cập nhật ứng dụng sẽ được cập nhật trong các bản phát hành tiếp theo.
 
 ## Liên hệ
 Để biết thêm thông tin, xin vui lòng liên hệ tôi hoặc mở một issue trên trang GitHub của dự án.
