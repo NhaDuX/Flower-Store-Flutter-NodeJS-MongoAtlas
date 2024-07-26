@@ -8,8 +8,7 @@
   - Chi tiết sản phẩm
   - Danh mục sản phẩm
   - Sản phẩm theo danh mục
-  - Giỏ hàng offline (sử dụng SQLite để lưu trữ)
-  - Thanh toán qua API
+  - Giỏ hàng offline (sử dụng SQLite để lưu trữ)  
   - Quản lý hồ sơ người dùng
   - Sản phẩm yêu thích
   - Lịch sử đơn hàng
