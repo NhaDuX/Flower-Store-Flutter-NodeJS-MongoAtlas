@@ -24,37 +24,37 @@
 ## Cài đặt
 
 ### 1. Clone project
-\```bash
 git clone https://github.com/NhaDuX/NhaDuX-Flower-Store-Flutter-NodeJS-MongoAtlas.git
-\```
+
+
 
 ### 2. Cài đặt và khởi chạy API
-\```bash
 cd API
 npm install
 node ./swagger.js
-\```
+
+
 
 ### 3. Cài đặt và khởi chạy Admin
-\```bash
 cd Admin
 ng serve --o
-\```
+
+
 
 ### 4. Cài đặt và khởi chạy ứng dụng Flutter
-\```bash
 cd App
 flutter run
-\```
+
+
 
 ### 5. Cấu hình
-- Cập nhật đường dẫn file Certificated trong `app.js` theo địa chỉ của thiết bị của bạn.
-- Thay đổi địa chỉ IPv4 trong file `http.service.dart` để phù hợp với cấu hình mạng của bạn.
+- Cập nhật đường dẫn file Certificated trong app.js theo địa chỉ của thiết bị của bạn.
+- Thay đổi địa chỉ IPv4 trong file http.service.dart để phù hợp với cấu hình mạng của bạn.  
 
 ## Hình ảnh minh họa
 
 ### 1. SignUp/SignIn
-\![SignUp/SignIn](https://firebasestorage.googleapis.com/v0/b/shopdt-5c0d7.appspot.com/o/images_4_git%2Fsignup-in.png?alt=media&token=889dd899-b019-4190-ac5a-0c9ac06d9dc8)
+![SignUp/SignIn](https://firebasestorage.googleapis.com/v0/b/shopdt-5c0d7.appspot.com/o/images_4_git%2Fsignup-in.png?alt=media&token=889dd899-b019-4190-ac5a-0c9ac06d9dc8)
 
 ### 2. ForgotPassword
 \![ForgotPassword](https://firebasestorage.googleapis.com/v0/b/shopdt-5c0d7.appspot.com/o/images_4_git%2FForgotPass.png?alt=media&token=f98bc9ab-bcef-4083-9104-202b91aa8a2b)
