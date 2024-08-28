@@ -77,8 +77,8 @@ flutter run
 ![AdminPage-3](https://firebasestorage.googleapis.com/v0/b/shopdt-5c0d7.appspot.com/o/images_4_git%2Fadmin-3.png?alt=media&token=22046e3c-8174-4936-b1fb-0ad95c6ff947)
 ![AdminPage-4](https://firebasestorage.googleapis.com/v0/b/shopdt-5c0d7.appspot.com/o/images_4_git%2Fadmin-4.png?alt=media&token=24340079-5fa3-47e9-b6d2-09a7e384f2d7)
 ### 8. Link
-\[Figma](https://www.figma.com/design/7oUB4cNUNTOeKkrmdON7Nu/4-Man-Flower?node-id=0-1)  
-\[Video Youtube show app](https://www.youtube.com/watch?v=pr1SE9kJ89o)  
+\![Figma](https://www.figma.com/design/7oUB4cNUNTOeKkrmdON7Nu/4-Man-Flower?node-id=0-1)  
+\![Video Youtube show app](https://www.youtube.com/watch?v=pr1SE9kJ89o)  
 ## Lưu ý
 Đảm bảo rằng mọi phần mềm cần thiết đã được cài đặt trên máy tính của bạn, bao gồm Flutter, Angular CLI, Node.js, và MongoDB.
 
